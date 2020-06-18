@@ -13,8 +13,7 @@ function hashPassword (user, options) {
     .then(salt => bcrypt.hashAsync(user.password, salt, null))
     .then(hash => {
       user.setDataValue('password', hash)
-  })
-  
+    })
 }
 
 module.exports = (sequelize, DataTypes) => {
